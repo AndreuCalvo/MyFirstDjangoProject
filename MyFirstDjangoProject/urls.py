@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from MyFirstDjangoProject.views import greet
+from MyFirstDjangoProject.views import getDate 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('greet/', greet),
+    path('date/', getDate)
 ]
