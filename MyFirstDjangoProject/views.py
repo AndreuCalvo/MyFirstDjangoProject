@@ -6,7 +6,7 @@ def greet(request):
     open_template = open("C:/Users/Andreu/Documents/uoc/django/MyFirstDjangoProject/MyFirstDjangoProject/templates/greet.html")
     tmplt = Template(open_template.read())
     open_template.close()
-    ctx = Context()
+    ctx = Context({"name":"django"})
     response = tmplt.render(ctx)
     return HttpResponse(response)
 
