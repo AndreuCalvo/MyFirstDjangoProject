@@ -1,5 +1,16 @@
+<style>
+    #bar{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    #bar li{
+        display: inline;
+    }
+</style>
 <hmlt>
     <body>
+        {% include "bar.html" %}
         <p>
             <b>Hello World {{ name }} course</b>
         </p>
