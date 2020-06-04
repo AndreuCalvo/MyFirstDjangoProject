@@ -1,13 +1,14 @@
 from django.http import HttpResponse
-from django.template import Template, Context
+from django.template import Template, Context, loader
 import datetime
 
 def greet(request):
-    open_template = open("C:/Users/Andreu/Documents/uoc/django/MyFirstDjangoProject/MyFirstDjangoProject/templates/greet.html")
-    tmplt = Template(open_template.read())
-    open_template.close()
-    ctx = Context({"name":"django"})
-    response = tmplt.render(ctx)
+    #open_template = open("C:/Users/Andreu/Documents/uoc/django/MyFirstDjangoProject/MyFirstDjangoProject/templates/greet.html")
+    #tmplt = Template(open_template.read())
+    #open_template.close()
+    #ctx = Context({"name":"django"})
+    tmplt = loader.get_template('greet.html')
+    response = tmplt.render({"name":"django a python framework"})
     return HttpResponse(response)
 
 def get_date(request):
